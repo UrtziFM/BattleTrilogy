@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game Theory's Trilogy for the Leaders of Tomorrow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+  integrity="sha512-pcTeVgyNcnxGN7qX5tukJVd0QEM2VCcJcWl6ThOHkClbdPJoM6ZlGxg6xP2nAPxslDk0khn0LiPDk5I8RypQJQ==" crossorigin="anonymous" 
+  referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Landing -->
+  <div class="section intro">
+    <h1>Welcome to <span class="highlight">Game Theory's Trilogy</span> for the Leaders of Tomorrow</h1>
+    <img src="Assets/falkenWelcome.png" alt="War Games Frame" class="intro-image">
+    <p class="intro-description">
+      A concise trilogy guiding future leaders to <span class="highlight-text">Do the right Math</span> before making decisions.
+    </p>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+
+  <!-- Intro -->
+  <div class="section chapter" id="chapter0">
+    <div class="chapter-content">
+      <h2 class="chapter-title">Intro: Teaching to AI</h2>
+      <div class="brick-container">
+        <div class="brick">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/hbqMuvnx5MU?si=FlMwnIhxVnk4jp7k" title="War Games Scene" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="italic-description">"WarGames" is a 1983 film directed by John Badham and starring a young Matthew Broderick. 
+            Set during the height of the Cold War, it tells the story of a high school student who hacks into the U.S. military's central 
+            computer, which is capable of starting a nuclear war.</p>
+        </div>
+        <div class="brick">
+          <p class="explanatory-text">Those of us who grew up in the 80s and enjoyed the movie "WarGames" will remember how David and Jennifer, 
+            after initially stumbling upon what seemed like a video game company, encounter "Joshua," an artificial intelligence trained over 
+            the years in different strategy games (Chess, Checkers, Poker, etc.) by Dr. Stephen Falken.</p>
+          <p class="explanatory1-text">Without giving away any spoilers, today, after years of training various artificial intelligences 
+            developed by brilliant but less tormented minds than Dr. Falken's, we now have, for example, chess engines so powerful that if we 
+            play as mere humans, defeat is almost inevitable.</p>
+          <p class="explanatory-text">At this point, we might ask ourselves: Is it still worth playing chess, given that even international 
+            competitions are being questioned? Should we now delegate decision-making entirely to artificial intelligences trained for this 
+            purpose? Can we do anything more than just watch? And if we only observe, are we sure that letting an artificial intelligence run 
+            on autopilot is the best option? These are questions we ask ourselves every day now, but they were already being raised back 
+            in 1983 with the release of "WarGames," as many of us remember.</p>
+        </div>  
+      </div>     
+    </div>
+    <div class="floating-buttons">
+      <!-- Chess Icon -->
+      <div class="fab-container">
+        <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+          <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+        </button>
+        <span class="fab-tooltip">BattleChess</span>
+      </div>
+      <!-- Poker Icon -->
+      <div class="fab-container">
+        <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+          <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+        </button>
+        <span class="fab-tooltip">BattlePoker</span>
+      </div>
+      <!-- Risk Icon -->
+      <div class="fab-container">
+        <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+          <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+        </button>
+        <span class="fab-tooltip">BattlePayRisk</span>
+      </div>
+    </div>    
+  </div> 
+<!-- Chapter 1 -->
+<div class="section chapter" id="chapter1">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Chapter 1: Do the right Math</h2>
+    <div class="brick-container">
+      <div class="brick">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/-4QPVo0UIzc" title="Money Ball Scene" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="italic-description">"Moneyball" is a 2011 film directed by Bennett Miller and starring Brad Pitt. 
+          Set in the world of professional baseball, it follows the story of Billy Beane, the Oakland A's general manager, who revolutionizes
+           the game by using data and statistical analysis to assemble a competitive team on a limited budget.</p>
+      </div>
+      <div class="brick">
+        <p class="explanatory-text">It's fascinating to see how, in this new era of artificial intelligence, where new applications and 
+          innovations are presented to us daily, we're encouraged to invest in and support the leading companies in the sector and we're 
+          gradually being nudged into accepting that decisions can be made by algorithms we don't fully understand. Yet, in business
+          leadership, we still seem bound to decision-making models shaped by phrases like "this is how it's always been done" ,"the boss 
+          requested it" or "the competition is doing it". Even when we take the time to apply some math, we often resort to static and overly 
+          complex Excel based business plans sold at a premium by consultants, these Excels feel more like playing a game of Risk trying to gain
+          just 5% more territory with each turn.</p>
+          <p class="explanatory1-text">Unfortunately, it's all too common for many business decisions to be made in the following way: 
+            First, different assumptions or hypotheses are formed, and then conclusions are drawn, skipping the critical step that Game 
+            Theory covers, which is doing the right math before make any decision. Indeed, Game theory provides a rigorous framework that ensures our conclusions follow 
+            logically from the assumptions we make.</p>
+          <p class="explanatory-text">So, why is it that in the age of artificial intelligence, we still make decisions without doing the 
+            right math? It's certainly a difficult question to answer. However, one question we will try to address is this: Can we make 
+            better decisions to become better leaders?</p>
+      </div>  
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+</div>
+<!-- Chapter 2 -->
+<div class="section chapter" id="chapter0">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Chapter 2: Game Theory in a Nutshell</h2>
+    <div class="brick-container">
+      <div class="brick">
+        <p class="explanatory-text">When starting out with Game Theory, one often encounters the classic Prisoner's Dilemma. However, in 
+          keeping with the theme of leadership in the business world, we'll adjust the context to reflect a more relevant scenario the 
+          Duopoly Dilemma. In this Dilemma, two dominant payment companies, face accusations 
+          from regulators for abusing their market power. Although there’s little evidence, each company could receive a fine for data misuse. 
+          However, if one reports the other, they are exonerated and gain market share, while the accused faces heavy penalties. If both accuse 
+          each other, they both suffer severe penalties. If neither reports, both receive smaller fines due to lack of proof. 
+          The dilemma mirrors the classic Prisoner’s Dilemma betrayal offers a personal advantage, but mutual defection leads to a 
+          worse outcome for both, forcing each to weigh their self-interest against cooperation.</p>
+        <p class="explanatory1-text">In this situation, a leader might assume that avoiding cooperation with the regulator is the best 
+          choice, believing both companies will gain more by staying silent. However, the math proves otherwise. Game theory shows 
+          that this strategy often leads to worse outcomes for both companies, highlighting that non-cooperation is rarely the 
+          optimal decision.</p>
+      </div> 
+      <div class="brick">
+        <div class="image-container">
+          <img src="Assets/prisionersDilemma.png" alt="War Games Scene" class="chapter-image">
+        </div>
+        <p class="italic-description">In this matrix, each player has two options: to keep quiet or confess. The dominant strategy here is 
+          for both players to confess. This is because, regardless of what Player 1 does, Player 2 minimizes their loss by confessing (0 > -1 &
+          -8 > -12), and same for Player 1.</p>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/LJS7Igvk6ZM" title="Beautiful Mind Scene" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="italic-description">"A Beautiful Mind" is a 2001 film directed by Ron Howard and starring Russell Crowe as John Nash, 
+          a brilliant mathematician. The movie delves into Nash’s groundbreaking work in game theory, particularly the concept of Nash 
+          Equilibrium, which revolutionized economics and strategic decision-making.</p>
+
+      </div>
+      <div class="brick">
+        <p class="explanatory-text">Game Theory is a mathematical framework for understanding strategic decision-making. It analyzes how 
+          individuals, businesses, or even nations make decisions in situations where the outcome depends on the choices of others. At its core,
+          provides insights into how rational players can anticipate the actions of others and optimize their strategies 
+          accordingly. The key elements are players, strategies, and payoffs. Players have different strategies available,
+          and the results (or payoffs) depend on the choices made by both themselves and other players. </p>
+        <p class="explanatory1-text">  One of the fundamental concepts is the Nash Equilibrium, where no player can gain by changing their 
+          strategy if the others remain constant. This equilibrium often explains why certain competitive outcomes are stable,
+          even if they are not the most beneficial for all parties involved. </p>
+        <p class="explanatory-text">  Game Theory can be applied in countless fields such as economics, politics, business, and artificial 
+          intelligence. It provides valuable tools for analyzing markets and negotiations by modeling 
+          competition and cooperation in a structured way. By understanding the underlying incentives and potential outcomes, Game Theory 
+          helps leaders make more informed decisions, paving the way for strategies that account for the actions and reactions of others 
+          in competitive environments.</p>
+      </div>  
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+</div>
+<!-- Chapter 3 -->
+<div class="section chapter" id="chapter1">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Chapter 3: Zero Sum & Perfect Information Games</h2>
+    <div class="brick-container">
+      <div class="brick">
+        <p class="explanatory-text">In Game Theory, a <u>zero-sum game</u> is a situation where the gain of one player is exactly equal to the loss 
+          of another player. This means that the total "sum" of outcomes across all players always equals zero. These games are typically 
+          competitive, with examples ranging from board games like Chess to real-world markets where companies compete for market share. 
+          In such a scenario, one company’s gain results in an equal loss for the competitor. <br> Meanwhile a <u>perfect information game</u> is a game where all players have complete knowledge of the game state at 
+          all times. Chess is a famous example of this. At any point during the game, both players know the exact configuration of the board 
+          and all previous moves. There are no hidden elements or randomness, unlike games like Poker, where players do not know the cards in 
+          their opponent's hands. This distinction makes strategic planning highly crucial in games of perfect information</p>
+        <p class="explanatory1-text">In zero-sum games like Chess, the combination of the Minimax Algorithm and 
+          Alpha-Beta Pruning allows players (and AI systems) to make optimized, strategic decisions. These techniques ensure that 
+          players can anticipate their opponent's best possible moves and make the most informed decisions.</p>
+      </div> 
+      <div class="brick">
+        <div class="image-container">
+          <img src="Assets/MinMax.png" alt="MinMax Algorithm" class="chapter-image small-image">
+        </div>
+        <p class="italic-description">The <u>Minimax Algorithm</u> is a key decision-making algorithm in perfect information, zero-sum games. 
+          It operates under the assumption that both players will play optimally, meaning each will make the best possible move to maximize 
+          their gains while minimizing the other's. In a game like Chess, this results in players considering all possible moves and responses 
+          to find the optimal strategy, which ensures the best possible outcome in the worst-case scenario.</p>
+        <div class="image-container">
+          <img src="Assets/AlphaBeta.png" alt="Alpha Beta Pruning" class="chapter-image small-image">
+        </div>
+        <p class="italic-description"><u>Alpha-Beta Pruning</u> is an optimization technique that improves Minimax by reducing the number of 
+          nodes evaluated in the game tree. It "prunes" branches of the tree that do not influence the final decision. This technique is 
+          essential for complex games like Chess, where there are vast numbers of possible moves. By pruning irrelevant branches, Alpha-Beta 
+          Pruning allows the algorithm to explore deeper into the game, making it computationally feasible to analyze several moves ahead, 
+          similar to how grandmasters play.</p>
+      </div>
+      <div class="brick">
+        <p class="explanatory-text">MinMax and Alpha-Beta Pruning have been pivotal in the evolution of AI decision-making strategies. Both 
+          algorithms have enabled AI systems to handle complex, strategic decision-making in games by analyzing several possible future moves 
+          and counter-moves, which makes the AI excel in planning, reasoning, and adapting to opponents’ strategies.</p>
+          <p class="explanatory1-text"><u>Key AI Milestones:</u><br>
+            <strong>Deep Blue vs. Garry Kasparov (1997)</strong>
+            <em>Context:</em> Deep Blue became the first AI to defeat a world chess champion, Garry Kasparov.
+            <em>How:</em> MinMax and Alpha-Beta Pruning allowed Deep Blue to evaluate millions of positions per second by focusing on the 
+            most promising moves and pruning irrelevant ones.<br>
+            <strong>AlphaGo vs. Lee Sedol (2016)</strong><br>
+            <em>Context:</em> AlphaGo, by Google DeepMind, defeated Go champion Lee Sedol in a five-game series.
+            <em>How:</em> Combining MinMax, Alpha-Beta Pruning, and Monte Carlo Tree Search (MCTS), AlphaGo navigated Go's vast move 
+            possibilities to make superior strategic choices.
+            </p>
+        <p class="explanatory-text">In conclusion, in zero-sum games like Chess as we will see in the next chapter, the combination of the Minimax Algorithm and 
+          Alpha-Beta Pruning allows players (and AI systems) to make optimized, strategic decisions.</p>
+      </div>  
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+</div>
+<!-- Chapter 4.1 -->
+<div class="section chapter" id="chapter0">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Chapter 4: Do the Math with BattleChess</h2>
+    <div class="brick-container">
+      <!-- Brick 1: Assigning Numerical Values to Pieces -->
+      <div class="brick">
+        <p class="explanatory-text">
+          In BattleChess, the AI's decision-making begins with assigning numerical values to each chess piece. These values represent 
+          the relative strength and importance of the pieces, allowing the AI to quantify material advantages or disadvantages during the game.
+          <br><br>The standard valuations used are:
+        </p>
+        <div class="image-container">
+          <img src="Assets/piecesValue.png" alt="Pieces" class="chapter-image small-image">
+        </div>
+        <p class="italic-description">The oldest derivation of the standard values is due to the Modenese School (Ercole del Rio,
+           Giambattista Lolli, and Domenico Lorenzo Ponziani) in the 18th century and is partially based on the earlier work of 
+           Pietro Carrera.The value of the king is undefined as it cannot be captured, let alone traded, during the course of the game</p>
+        <p class="explanatory-text"> Chess engines usually assign the king an arbitrary large value such as 200 points or more to indicate 
+          that the inevitable loss of the king due to checkmate trumps all other considerations. The endgame is a different story, as there 
+          is less danger of checkmate, allowing the king to take a more active role.</p>
+        <p class="explanatory1-text">
+          These values are fundamental for the evaluation. For instance, if you capture an opponent's 
+          bishop (3 points) in exchange for a knight (3 points), the balance remains equal. However, capturing a rook (5 points) 
+          for a bishop (3 points) gives you a material gain of <em>5 - 3 = +2</em> points.
+        </p>
+      </div>
+      <!-- Brick 2: Positional Evaluation with Piece-Square Tables -->
+      <div class="brick">
+        <p class="explanatory1-text">
+          Beyond assigning numerical value to the pieces, the AI evaluates the positions of the pieces using <strong>Piece Square Tables 
+          (PSTs)</strong>. This method assign additional values to pieces based on their location on the board, reflecting positional 
+          strengths and weaknesses.For each piece type, there is a matrix that represents the board, where each square 
+          has a positional value <br> (<em>V<sub>p</sub></em>)= PST<sub>piece type</sub>[rank][file]</p>
+          <p class="explanatory-text">Examples of Positional Advantages:
+            <ul class="tables-text">
+              <li><strong>Pawns:</strong> Advance in value as they move towards promotion; central pawns are more valuable than edge pawns.</li>
+              <li><strong>Knights:</strong> More effective in the center (e.g., <em>d4</em>, <em>e5</em>) where they control more squares.</li>
+              <li><strong>Bishops:</strong> Value open diagonals and avoid being blocked by their own pawns.</li>
+              <li><strong>Rooks:</strong> Prefer open files and the seventh rank, where they can pressure the opponent's position.</li>
+              <li><strong>Queen:</strong> Strongest in open positions with many available moves.</li>
+            </ul></p>
+          <div class="image-container">
+            <img src="Assets/piecesSquare.png" alt="MinMax Algorithm" class="chapter-image small-image">
+          </div>
+          <p class="italic-description">Mathematical Representation: For a piece <em>i</em> at position (<em>r</em>, <em>f</em>):<br>
+            <em>V<sub>p<sub>i</sub></sub> = PST<sub>i</sub>[<em>r</em>][<em>f</em>]</em><br>
+          </p>
+      </div>
+      <!-- Brick 3: The Evaluation Function and Strategic Planning -->
+      <div class="brick">
+        <p class="explanatory-text">
+          The AI combines the material and positional evaluations into a comprehensive evaluation function. This function calculates a 
+          total score (<em>E</em>) representing the favorability of the current board state for the AI.
+        </p>
+        <p class="explanatory-text">
+          <strong>Evaluation Function Formula:</strong><br>
+          <em>
+            E = ( &#931;<sub>i &isin; AI</sub> ( M<sub>i</sub> + V<sub>p<sub>i</sub></sub> ) ) &minus; ( &#931;<sub>j &isin; Opponent</sub> ( M<sub>j</sub> + V<sub>p<sub>j</sub></sub> ) )
+          </em><br><br>
+          <strong>Example Calculation:</strong><br>
+          AI has a knight (3 points) on <em>e5</em> with <em>V<sub>p</sub> = +0.5</em>.<br>
+          Opponent has a bishop (3 points) on <em>c8</em> with <em>V<sub>p</sub> = &minus;0.2</em>.<br><br>
+          <strong>Total evaluation:</strong><br>
+          <em>E = (3 + 0.5) &minus; (3 &minus; 0.2) = 3.5 &minus; 2.8 = +0.7</em>
+        </p>
+        <p class="explanatory-text">
+          Where:
+          <ul class="tables-text">
+            <li><em>M<sub>i</sub></em>: Material value of the AI's piece <em>i</em>.</li>
+            <li><em>V<sub>p<sub>i</sub></sub></em>: Positional value of the AI's piece <em>i</em>.</li>
+            <li><em>M<sub>j</sub></em>: Material value of the opponent's piece <em>j</em>.</li>
+            <li><em>V<sub>p<sub>j</sub></sub></em>: Positional value of the opponent's piece <em>j</em>.</li>
+          </ul>
+          The positive score indicates the AI has a slight advantage due to better piece positioning.
+        </p>        
+        <p class="explanatory1-text">
+          Strategic Planning: By calculating the evaluation score for possible moves, the AI can prioritize those that increase
+           <em>E</em>, leading to material gains, improved positions, or both. This mathematical approach enables the AI to simulate
+            future scenarios and make decisions that align with strategic objectives.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+</div>
+<!-- Chapter 4.2 -->
+<div class="section chapter" id="chapter1">
+  <div class="chapter-content">
+    <div class="brick-container">
+      <!-- Brick 1: Mathematical Foundation of the Minimax Algorithm -->
+      <div class="brick">
+        <p class="explanatory-text">
+          The Minimax Algorithm is the mathematical foundation of the AI's decision-making process in BattleChess. 
+          It allows the AI to evaluate potential moves by anticipating the opponent's responses and choosing moves that maximize its 
+          minimum gain.
+        </p>
+        <p class="explanatory1-text">
+          The AI evaluates the game tree by assigning a value to each possible position (node) 
+          using the evaluation function <em>E(s)</em>. 
+        </p>
+        <p class="explanatory-text"> The Minimax value <em>V(s)</em> of a position <em>s</em> is defined recursively:<br>
+          <em>
+            V(s) = 
+            <br>
+            &nbsp;&nbsp;if s is a terminal node: &nbsp;&nbsp;V(s) = E(s);<br>
+            &nbsp;&nbsp;if it's AI's turn: &nbsp;&nbsp;V(s) = max<sub>a ∈ A(s)</sub> V(s');<br>
+            &nbsp;&nbsp;if it's player's turn: &nbsp;&nbsp;V(s) = min<sub>b ∈ B(s)</sub> V(s').<br>
+          </em>
+          Where:
+          <ul class="tables-text">
+            <li><em>s</em>: Current game state.</li>
+            <li><em>s'</em>: Game state resulting from move <em>a</em> or <em>b</em>.</li>
+            <li><em>A(s)</em>: Set of possible moves for AI from state <em>s</em>.</li>
+            <li><em>B(s)</em>: Set of possible moves for player from state <em>s</em>.</li>
+            <li><em>E(s)</em>: Evaluation function assigning a numerical value to state <em>s</em>.</li>
+          </ul>
+          <strong>Steps in the Minimax Evaluation:</strong>
+          <ol class="tables-text">
+            <li><u>Generate Possible Moves:</u> AI lists all legal moves from the current position.</li>
+            <li><u>Simulate Moves:</u> For each move, AI simulates the move and generates the resulting position.</li>
+            <li><u>Evaluate Player's Responses:</u> For each resulting position, AI assumes the opponent will play optimally and generates 
+              all possible responses.</li>
+            <li><u>Assign Scores:</u> AI uses the evaluation function <em>E(s)</em> to assign scores to the terminal nodes (positions at the 
+              maximum depth or game-ending positions).</li>
+            <li><u>Backpropagate Scores:</u> AI backpropagates the scores up the game tree, selecting the minimum score at player's turn and 
+              the maximum score at its own turn.</li>
+            <li><u>Select Move:</u> AI chooses the move that leads to the position with the highest Minimax value.</li>
+          </ol>
+        </p>
+      </div>
+      <!-- Brick 2: Application of Minimax in Evaluating Moves -->
+      <div class="brick">
+        <p class="explanatory1-text">
+          <u>Chess Move Example:</u> Let's consider a initial position where player (White) has at least the following possible moves:
+          <ul class="tables-text">
+            <li><strong>M1:</strong> Pawn to <em>e4</em></li>
+            <li><strong>M2:</strong> Knight to <em>f3</em></li>
+            <li><strong>M3:</strong> Pawn to <em>d4</em></li>
+          </ul>
+        </p>
+        <div class="image-container">
+          <img src="Assets/initialMove.png" alt="MinMax Algorithm" class="chapter-image small-image">
+        </div>
+        <p class="explanatory1-text">
+          The AI evaluates each move:
+          <ul class="tables-text">
+            <li><u>After M1-></u> Opponent responds with:<br>R1:Pawn to <em>e5</em> (symmetrical position), evaluation: 0 or 
+              R2:</strong> Knight to <em>c6</em>, evaluation: +0.1 (slight advantage AI)<br>
+              Min value for M1: min(0, +0.1) = 0
+            </li>
+            <li><u>After M2-></u> Opponent responds with:<br>R1:Pawn to <em>d5</em>, evaluation: +0.2 or R2: Pawn to <em>e5</em>, evaluation: +0.2<br>
+              Min value for M2: min(+0.2, +0.2) = +0.2
+            </li>
+            <li><u>After M3-></u> Opponent responds with:<br>R1:Pawn to <em>d5</em>, evaluation: 0 or R2: Knight to <em>f6</em>, evaluation: +0.1<br>
+              Min value for M3: min(0, +0.1) = 0
+            </li>
+          </ul>
+          The AI selects <strong>(Knight to f3)</strong> because it has the highest Minimax value of <strong>+0.2.</strong>
+        </p>
+      </div>
+      <!-- Brick 3: Alpha-Beta Pruning Optimization with Examples -->
+      <div class="brick">
+        <p class="explanatory-text">
+          As the depth of the game tree increases, the number of possible positions grows exponentially, making it computationally 
+          intensive to evaluate every node. To address this, the AI uses <strong>Alpha-Beta Pruning</strong> to eliminate branches that 
+          cannot possibly affect the final decision.
+        </p>
+        <p class="explanatory1-text">
+          Alpha <em>&alpha;</em> represents the best (highest) score that the maximizing player (AI) can guarantee, while Beta <em>&beta;</em> 
+          represents the best (lowest) score that the minimizing player (opponent) can guarantee. The pruning condition is: 
+          if at any point <em>&alpha; &geq; &beta;</em>, the AI stops evaluating further moves along that branch because the opponent 
+          will not allow that path to occur.
+        </p>
+        <p class="explanatory-text">
+          Suppose the AI is evaluating moves at depth 3 with the following scenario:
+          <ul class="tables-text">
+            Depth 1 (AI's Move)-> M1: Move A <br>M2: Move B<br> Depth 2 (Opponent's Response):<br>
+            (<em>Evaluation Process with Alpha-Beta Pruning: Initialize &alpha; = -∞ and &beta; = +∞.)</em><br>
+            <li><u>After M1 -></u> Opponent responds with:<br>
+              R1: Response A1, evaluation: +1. Update &beta; = min(+∞, +1) = +1.<br>
+              R2: Response A2, evaluation: 0. Update &beta; = min(+1, 0) = 0 <br>
+              Min value for M1: min(+1, 0) = 0. Update &alpha; = max(-∞, 0) = 0.
+            </li>
+            <li><u>After M2 -></u> Opponent responds with:<br>
+              <em>(Before evaluating, check if &alpha; &geq; &beta;; currently &alpha; = 0, &beta; = 0; since &alpha; = &beta;, pruning occurs.)</em><br> 
+              The AI stops evaluating further moves under M2
+            </li>
+          </ul>
+          The AI selects <strong>M1</strong> because it has the higher Minimax value of <strong>0</strong> compared to <strong>M2</strong> 
+          (not fully evaluated due to pruning).
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+</div>
+ <!-- Chapter 4.3 -->
+<div class="section chapter" id="chapter0">
+  <div class="chapter-content">
+    <div class="brick-container">
+      <div class="brick">
+        <p class="explanatory1-text">
+          <u>Initial State:</u> The Player (White) moves and it has all of top 5 recommendations at the same score. Why is the N g1 to f3 
+          blue highlighted recommendation?
+        </p>
+        <div class="image-container">
+          <img src="Assets/chess1Move.png" alt="chess move 1" class="chapter-image small-image">
+        </div>
+        <p class="explanatory-text">
+          <ul class="tables-text">
+            <li><u>Step 1:</u> Initial Evaluation: The Minimax algorithm evaluates possible moves, considering that White 
+              wants to maximize the score, and Black minimizes it.</li>
+            <li><u>Step 2:</u> Alpha-Beta Pruning: The tree of possible moves is pruned where moves are clearly inferior, speeding up 
+              calculations by ignoring unnecessary branches.</li>
+            <li><u>Step 3:</u> Score Calculation: Each move is scored. The move <strong>N g1 to f3</strong> scored -5, indicating a slight 
+              disadvantage for White. Its range (-290 to 182) represents possible outcomes with opponent responses. Despite 
+              sharing a score of -5 with other moves, this one offers more consistent outcomes.</li>
+            <li><u>Step 4:</u> Best Option: This move was chosen over others with the same score because its outcome range is more stable, 
+              avoiding potential risks in subsequent moves.</li>
+          </ul>
+        </p>
+        <p class="explanatory-text">
+          <strong>N g1 to f3</strong> is the best move because it balances risk and opportunity better than the other options. First,
+          it has a better best-case outcome (up to 182) than many other moves. The worst-case scenario (-290) is more manageable compared 
+          to some other moves, which have either extremely negative outcomes or narrower ranges that limit opportunities for gaining an advantage.
+        </p>  
+      </div>
+      <div class="brick">
+        <p class="explanatory-text">
+          <u>*Important*</u> the reason why the top five recommendations all have the same score of -5 in the initial state 
+          is mainly due to two factors: 
+          <ul class="tables-text">
+            <li><u>Depth-3 Decision Tree:</u> The AI's evaluation looks three moves ahead in the decision tree, which means 
+              it's evaluating the impact of the current move and the next two responses (one from each player). At such a shallow depth, 
+              the initial moves of white do not create a significant material or positional advantage over black, leading to similar evaluations.
+            </li>
+            <li><u>White's Starting Position:</u> In chess, despite moving first, white is not always guaranteed an advantage. 
+              The score of -5 suggests that, even from the initial position, the AI estimates that white does not have a clear advantage 
+              and might be slightly at a disadvantage.
+            </li>
+          </ul>
+        </p>
+        <p class="explanatory1-text">
+          <u>Black in Check State:</u> The Player (White) only have two recommendations to skip it.
+        </p>
+        <div class="image-container">
+          <img src="Assets/chess2Move.png" alt="chess move 2" class="chapter-image small-image">
+        </div> 
+        <p class="explanatory-text">
+          In this position, White is in check and must respond to get out of check. 
+          <ul class="tables-text">
+            <li><strong>1° White Ke1 to d1:</strong> This move yields a score of <em>+19</em> in a range from <em>-1314 to +1210</em>. 
+              The positive score suggests that moving the king to d1 will effectively stabilize the position and maintain White's advantage.</li>
+            <li><strong>2° White Ke1 to f2:</strong> This move results in a score of <em>-317</em> within a range from <em>-1362 to +1188</em>.
+               The negative score indicates a considerable risk, as this move leaves White in a much worse position compared to moving to d1.</li>
+          </ul>
+        </p>
+      </div>
+      <div class="brick">
+        <p class="explanatory1-text">
+          <u>Different Scores State:</u> The Player (White) moves are each with a different score.
+        </p>
+        <div class="image-container">
+          <img src="Assets/chess3Move.png" alt="chess move 3" class="chapter-image small-image">
+        </div>
+        <p class="explanatory-text">
+          In this position, Black has a significant advantage, but White has several possible moves to reduce the impact. The scores differ 
+          because each move alters White's position in unique ways, influencing the material balance, control of the board, and future tactical 
+          opportunities.
+        </p>
+        <p class="explanatory1-text">
+          <u>Drawn State:</u> The Player (White) is presented with multiple move options, but all have an equivalent score of 0.
+      </p>
+      <div class="image-container">
+          <img src="Assets/chess4Move.png" alt="Threefold Repetition Draw" class="chapter-image small-image">
+      </div>
+      <p class="explanatory-text"> 
+          Neither side holds any advantage, as reflected by the score of +0 for all possible moves.
+      </p>
+      </div>
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+</div>
+<!-- Chapter 5 -->
+<div class="section chapter" id="chapter1">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Chapter 5: Zero Sum & Imperfect Information Games</h2>
+    <div class="brick-container">
+      <div class="brick">
+        <p class="explanatory-text">We have seen that in Game Theory, a <u>zero-sum game</u> is a situation where one player's gain is 
+          exactly equal to another's loss. Poker is a classic example of this because the amount won by one player is lost by the others. 
+          This competitive dynamic makes strategic decision-making crucial, as each player's actions directly impact the outcomes of others. 
+          However, what adds another layer of complexity is that Poker is also an <u>imperfect information game</u>, where players lack complete 
+          knowledge about the game state, often due to hidden information or randomness. In many card games, including Poker, players cannot 
+          see their opponents' cards, requiring decisions based on probabilities, intuition, and inference rather than certainty. This 
+          uncertainty adds complexity to the game, making strategy and adaptability essential for success.</p>
+        <p class="explanatory1-text">The <u>Counterfactual Regret Minimization (CRM)</u> algorithm is a key method for making optimal 
+          decisions in imperfect information games like Poker. It works by minimizing "regret" over time, which measures how much better a 
+          player could have done by choosing different strategies. By iteratively updating strategies to minimize this regret, CRM converges 
+          toward a Nash Equilibrium, where no player can benefit from unilaterally changing their strategy. This approach allows players to 
+          systematically improve their decision-making process, even in the face of uncertainty and hidden information.</p>
+      </div>
+      <div class="brick">
+        <p class="explanatory-text">Typically, Counterfactual Regret Minimization algorithm would depict a game tree representing 
+          possible moves in a game like Poker. The game tree would show: <br>
+          <ul class="tables-text">
+            <li>Decision Nodes: Points where a player must choose an action.</li>
+            <li>Chance Nodes: Points where randomness determines the outcome (like drawing a card).</li>
+            <li>Edges: Possible actions or events leading to the next node.</li>
+            <li>Regret Values: Annotations at each decision node showing how regret is calculated and updated over time.</li>
+          </ul>
+          </p>
+        <div class="image-container">
+          <img src="Assets/pokerCRM.png" alt="Poker Game Tree" class="chapter-image small-image">
+        </div>
+        <p class="italic-description">In Poker, CRM navigates the extensive game tree of possible moves and outcomes, accounting 
+          for all potential actions and counteractions. This allows players (or AI systems) to make decisions that effectively balance 
+          risk and reward, even when information is incomplete or hidden. The algorithm's ability to handle uncertainty makes it particularly 
+          suited for complex games like Poker.</p>
+        <p class="explanatory1-text">This visual representation helps to understand how CRM navigates through the game tree, updating strategies at each node by 
+          minimizing regret based on the outcomes of simulated plays. By seeing how the algorithm iteratively adjusts decisions to converge 
+          towards an optimal strategy, the complexities of CRM become more approachable</p>
+      </div>
+      <div class="brick">
+        <p class="explanatory-text">Counterfactual Regret Minimization has been pivotal in advancing AI strategies for imperfect 
+          information games. By enabling systems to handle hidden information and adapt to opponents' behaviors, CRM has allowed AI 
+          to compete with (and even surpass) human experts in games like Poker.</p>
+        <p class="explanatory1-text"><u>Key AI Milestones:</u><br>
+          <strong>Libratus vs. Top Professional Poker Players (2017)</strong><br>
+          <em>Context:</em> Libratus, developed by Carnegie Mellon University, defeated top human professionals in heads-up no-limit Texas 
+          Hold'em Poker.<br>
+          <em>How:</em> Utilizing advanced CRM algorithms, Libratus effectively handled the vast number of possible game states and 
+          devised strategies that were both unpredictable and highly effective against human opponents.<br><br>
+          <strong>Pluribus vs. Human Professionals (2019)</strong><br>
+          <em>Context:</em> Pluribus, a collaboration between Carnegie Mellon and Facebook AI, defeated multiple human professionals 
+          in six-player no-limit Texas Hold'em Poker.<br>
+          <em>How:</em> Pluribus extended CRM techniques to multi-player settings, demonstrating that AI can outperform humans even in 
+          complex, multi-agent environments with imperfect information.</p>
+        <p class="explanatory-text">In conclusion, in zero-sum & imperfect information games, CRM 
+          enables players (and AI systems) to make optimized, strategic decisions despite uncertainty.</p>
+      </div>  
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+</div>
+<!-- Chapter 6.1 -->
+<div class="section chapter" id="chapter0">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Chapter 6: Do the Math with BattlePoker</h2>
+    <div class="brick-container">
+      <!-- Brick 1: Assigning Numerical Values to Poker Hands -->
+      <div class="brick">
+        <p class="explanatory-text">
+          In BattlePoker, the AI's decision-making begins with assigning numerical values to each possible poker hand. These values represent 
+          the relative strength and probability of the hands, allowing the AI to quantify advantages or disadvantages during the game.
+          <br><br>The standard hand rankings used are:
+        </p>
+        <div class="image-container">
+          <img src="Assets/handRanking.png" alt="Poker Hands" class="chapter-image small-image">
+        </div>
+        <p class="italic-description">Poker hand rankings are based on the rarity and strength of each hand. For example, a Royal Flush 
+          is the highest-ranking hand due to its rarity, while a High Card is the lowest. Understanding these values is crucial for strategic 
+          decision-making in the game.</p>
+        <p class="explanatory-text">
+          <ul class="tables-text">
+            <li><strong>High Card:</strong> Value = 1</li>
+            <li><strong>One Pair:</strong> Value = 2</li>
+            <li><strong>Two Pair:</strong> Value = 3</li>
+            <li><strong>Three of a Kind:</strong> Value = 4</li>
+            <li><strong>Straight:</strong> Value = 5</li>
+            <li><strong>Flush:</strong> Value = 6</li>
+            <li><strong>Full House:</strong> Value = 7</li>
+            <li><strong>Four of a Kind:</strong> Value = 8</li>
+            <li><strong>Straight Flush:</strong> Value = 9</li>
+            <li><strong>Royal Flush:</strong> Value = 10</li>
+          </ul>
+        </p>
+      </div>
+      <!-- Brick 2: Evaluating Probabilities and Opponent Modeling -->
+      <div class="brick">
+        <p class="explanatory1-text">
+          Beyond assigning numerical values to hands, the AI evaluates the probabilities of various outcomes and models opponent 
+          behavior using statistical methods. This involves calculating the likelihood of certain hands being held by opponents based 
+          on available information and betting patterns.</p>
+        <p class="explanatory-text">
+          <strong>Probability Calculations:</strong><br>
+          The AI calculates the probability of improving its hand or the chances that an opponent has a stronger hand.<br>
+          (<em>P(Event) = Number of Favorable Outcomes / Total Possible Outcomes</em>)
+        </p>
+        <p class="explanatory-text">Examples of Strategic Considerations:
+          <ul class="tables-text">
+            <li><strong>Pot Odds:</strong> Comparing the size of the pot to the cost of a contemplated call to determine if the call is profitable.</li>
+            <li><strong>Expected Value (EV):</strong> Estimating the average amount the AI expects to win or lose with a particular decision over time.</li>
+            <li><strong>Bluff Detection:</strong> Analyzing opponents' betting patterns to identify possible bluffs or strong hands.</li>
+            <li><strong>Position Advantage:</strong> Recognizing the benefits of acting later in a betting round, allowing the AI to gather more information before making a decision.</li>
+          </ul>
+        </p>
+        <p class="explanatory1-text">For example calculating pot odds:<br>
+          <em>Pot Odds = Potential Winnings / Cost to Call</em><br>
+          If the pot odds are better than the odds of completing a winning hand, the AI may decide to call or raise.
+        </p>
+      </div>
+      <!-- Brick 3: The CRM Algorithm and Strategic Decision-Making -->
+      <div class="brick">
+        <p class="explanatory-text">
+          <strong>Poker Game Example:</strong><br>
+          Suppose the AI considers two actions at a decision point: 'match' and 'raise'. The current regrets (R) are <code>R<sub>match</sub> = 5
+          </code> and <code>R<sub>raise</sub> = 3</code>. The strategy probabilities (S) are calculated as:
+        </p>
+        <ul class="tables-text">
+          <li><code>S<sub>match</sub> = max(5, 0) / (5 + 3) = 0.625</code></li>
+          <li><code>S<sub>raise</sub> = max(3, 0) / (5 + 3) = 0.375</code></li><br>
+          <li>The AI selects 'match' with probability 62.5% and 'raise' with 37.5%.</li>
+        </ul>
+        <p class="explanatory-text">
+          Suppose the AI chooses 'raise' and receives an actual reward <code>U<sub>actual</sub> = 10</code>. It calculates counterfactual rewards (U) for all actions:
+        </p>
+        <ul class="tables-text">
+          <li><code>U<sub>match</sub> = 8</code> (what it would have earned by matching)</li>
+          <li><code>U<sub>raise</sub> = 10</code> (the reward from raising)</li>
+          <li><code>R<sub>match</sub> = 5 + (8 - 10) = 3</code></li>
+          <li><code>R<sub>raise</sub> = 3 + (10 - 10) = 3</code></li>
+          <li><code>S<sub>match</sub> = max(3, 0) / (3 + 3) = 0.5</code></li>
+          <li><code>S<sub>raise</sub> = max(3, 0) / (3 + 3) = 0.5</code></li>
+        </ul>
+        <p class="explanatory-text">This adjustment reflects the updated regrets and shifts the strategy to consider both actions equally.</p>
+        <p class="explanatory1-text">
+          In summary, CRM minimizes regret by mathematically adjusting strategies based on the difference between actual and counterfactual 
+          rewards. This enables the AI to optimize its decision-making over time, adapting to the uncertainties of poker by learning from 
+          previous outcomes in precise quantitative terms.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+</div>
+ <!-- Chapter 6.2 -->
+ <div class="section chapter" id="chapter1">
+  <div class="chapter-content">
+    <div class="brick-container">
+        <div class="brick">
+          <p class="explanatory1-text">
+            <u>Initial State:</u> Pre-flop, the player is dealt a high-card ace, and Player 3 has bet $85.
+          </p>
+          <div class="image-container">
+            <img src="Assets/poker1Move.png" alt="Poker initial state" class="chapter-image small-image">
+          </div>
+          <p class="explanatory-text">
+            <ul class="tables-text">
+              <li><u>Step 1:</u> Initial Evaluation: The AI calculates the player's hand strength as a high-card ace. The CFR algorithm 
+                evaluates potential actions—'check', 'match', 'raise', or 'all-in'—based on possible outcomes and opponent responses.</li>
+              <li><u>Step 2:</u> Regret Minimization: The CFR algorithm updates its strategy by reducing the likelihood of actions that 
+                have resulted in higher regret in the past and increasing the probability of those that minimized regret.</li>
+              <li><u>Step 3:</u> Action Calculation: The AI calculates that the player’s best options are 'check' or 'fold' given the 
+                strength of their hand and the size of the current pot ($40).</li>
+              <li><u>Step 4:</u> Best Option: The AI recommends checking (-0.42 reward), as raising or going all-in would introduce a 
+                high risk given the minimal value of the current hand.</li>
+            </ul>
+          </p>
+          <p class="explanatory-text">
+            In this scenario, checking is the best move as it avoids unnecessary risk. The AI has calculated that more aggressive 
+            moves like 'raise' or 'all-in' would result in higher regret (score).
+          </p>  
+        </div>
+        <div class="brick">
+          <p class="explanatory1-text">
+            <u>Betting After the Flop:</u> The player now has a pair of jacks, and Player 3 has bet $108 increasing the pot.
+          </p>
+          <div class="image-container">
+            <img src="Assets/poker2Move.png" alt="Poker second move" class="chapter-image small-image">
+          </div>
+          <p class="explanatory-text">
+            In this situation, the player’s hand has improved to a pair of jacks after the flop. The ranking of recommendations is based on 
+            minimizing risk while factoring in the player’s hand strength and Player 3's aggressive bet of $108.
+            <ul class="tables-text">
+              <li><strong>Check (-0.56):</strong> Safest option, avoiding unnecessary risk and limiting potential loss.</li>
+              <li><strong>Match (-47.66):</strong> Involves higher risk, as matching a large bet could lead to substantial loss.</li>
+              <li><strong>Raise (-111.49):</strong> Increases potential loss with limited upside based on the current hand strength.</li>
+              <li><strong>All-In (-200.94):</strong> Riskiest move, likely resulting in a significant loss due to the vulnerability of the hand.</li>
+            </ul>
+          </p>
+          <p class="explanatory-text">
+            The estimated reward range (-227.99 to -0.40) reflects the potential losses, with aggressive moves carrying greater risk 
+            and checking offering minimal loss.
+          </p>
+        </div>
+        <div class="brick">
+          <p class="explanatory1-text">
+            <u>Final Bet:</u> The player has a pair of sixes and has gone in All-In.
+          </p>
+          <div class="image-container">
+            <img src="Assets/poker3Move.png" alt="Poker final move" class="chapter-image small-image">
+          </div>
+          <p class="explanatory-text">
+            The reason the estimated reward range is so wide is due to the significant variation in outcomes based on different actions. 
+            The potential loss in aggressive actions like raising or going all-in reflects the vulnerability of the player's hand. 
+            If an opponent holds a stronger hand, the downside risk is very high, hence the negative values.
+         </p>
+          <p class="explanatory-text">
+            In conclusion, this range helps to illustrate the importance of careful decision-making. Although the check score is positive, 
+            which makes it the safest action, the lower end of the range shows that actions like raising or going all-in carry substantial risk.
+            Understanding the width of this range is crucial for making an informed decision while aggressive plays might offer potential 
+            for higher rewards, they are also much more likely to result in large losses.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="floating-buttons">
+      <!-- Chess Icon -->
+      <div class="fab-container">
+        <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+          <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+        </button>
+        <span class="fab-tooltip">BattleChess</span>
+      </div>
+      <!-- Poker Icon -->
+      <div class="fab-container">
+        <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+          <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+        </button>
+        <span class="fab-tooltip">BattlePoker</span>
+      </div>
+      <!-- Risk Icon -->
+      <div class="fab-container">
+        <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+          <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+        </button>
+        <span class="fab-tooltip">BattlePayRisk</span>
+      </div>
+    </div>    
+  </div>
+<!-- Chapter 7 -->
+<div class="section chapter" id="chapter0">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Chapter 7: Complexity in Iterative Strategy Games</h2>
+    <div class="brick-container">
+      <div class="brick">
+        <p class="explanatory-text">There are games like Risk and Catan which are renowned for their strategic depth and complex decision-making
+          processes. These games are examples of <u>zero-sum</u> situations, where one player's gain is often balanced by the losses of others. 
+          They also involve <u>imperfect information</u>, as players may not know the exact strategies or resources of their opponents. 
+          The <u>complexity</u> arises from the vast number of possible game states and the iterative nature of gameplay, where each decision can 
+          significantly impact future options and outcomes. Players must plan multiple moves ahead, considering not only their own strategies 
+          but also predicting the actions of their opponents. This complexity requires players to constantly adapt their strategies, making 
+          these games both challenging and engaging.</p>
+        <p class="explanatory1-text">To navigate this complexity, players often rely on heuristics or simplified models to make decisions. 
+          However, as the number of possible moves increases exponentially with each turn, traditional decision-making methods become less 
+          effective. This is where advanced algorithms like the <u>Monte Carlo Tree Search (MCTS)</u> come into play. MCTS allows for more 
+          efficient exploration of possible game states, enabling players (or AI systems) to make more informed decisions in complex iterative 
+          games.</p>
+      </div>
+      <div class="brick">
+        <p class="explanatory-text">MCTS builds a search tree incrementally and asymmetrically, focusing on the most 
+           promising moves. The algorithm consists of four main steps:<br>
+          <ul class="tables-text">
+            <li><strong>Selection:</strong> Starting from the root node, select successive child nodes until a leaf node is reached.</li>
+            <li><strong>Expansion:</strong> If the leaf node is not a terminal node, expand it by adding one or more child nodes.</li>
+            <li><strong>Simulation:</strong> Run a simulation from the new node to a terminal state using random or heuristic policies.</li>
+            <li><strong>Backpropagation:</strong> Update the values of the nodes on the path from the new node to the root based on the simulation result.</li>
+          </ul>
+        </p>
+        <div class="image-container">
+          <img src="Assets/MCTSDiagram.png" alt="MCTS Diagram" class="chapter-image small-image">
+        </div>
+        <p class="italic-description">MCTS efficiently explores the vast game tree by simulating many possible 
+          future scenarios.</p>
+        <p class="explanatory1-text">MCTS prioritizes certain branches of the game tree 
+          based on the results of simulations, effectively balancing exploration of new moves with exploitation of known favorable strategies. 
+          By focusing computational resources on the most promising moves, MCTS makes complex decision-making more tractable.</p>
+      </div>
+      <div class="brick">
+        <p class="explanatory-text">MCTS has significantly advanced AI strategies in complex iterative games. By efficiently 
+          handling the enormous number of possible game states and adapting to dynamic game environments, MCTS has enabled AI to perform at high
+           levels in games previously dominated by human intuition and experience.</p>
+        <p class="explanatory1-text"><u>Key AI Applications:</u><br>
+          <strong>AI in Chess Engines</strong><br>
+          <em>Context:</em> Modern chess engines like Leela Chess Zero utilize MCTS along with neural networks to make decisions.<br>
+          <em>How:</em> It helps the AI explore potential moves more efficiently than traditional brute-force methods, leading to 
+          superior strategic play.<br>
+          <strong>AI in Real-Time Strategy Games</strong><br>
+          <em>Context:</em> AI agents have been developed to play complex video games like StarCraft II.<br>
+          <em>How:</em> MCTS enables the AI to handle real-time decision-making with imperfect information, considering a vast number of 
+          potential strategies and counter-strategies.</p>
+        <p class="explanatory-text">In conclusion, Monte Carlo Tree Search represents a significant mathematical advancement in AI and game 
+          theory. By utilizing probabilistic simulations and statistical analysis, MCTS efficiently navigates complex decision spaces in 
+          iterative games. Its ability to balance exploration and exploitation allows Artificial Intelligence systems to make optimized strategic decisions in 
+          environments with immense complexity and uncertainty.</p>
+      </div>  
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+</div>
+<!-- Chapter 8 -->
+<div class="section chapter" id="chapter1">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Chapter 8: Do the Math with BattlePayRisk</h2>
+    <div class="brick-container">
+      <!-- Brick 1: Traditional Rules of Risk in a Nutshell -->
+      <div class="brick">
+        <p class="explanatory-text">
+          In BattlePayRisk, we begin by revisiting the traditional rules of the classic Risk game. The objective is to conquer territories
+          and eliminate opponents through strategic troop movements and battles. Each player starts with a set number of armies and territories,
+          and the game progresses in turns consisting of reinforcement, attack, and fortification phases.
+        </p>
+        <div class="image-container">
+          <img src="Assets/riskGame.png" alt="Classic Risk Board" class="chapter-image small-image">
+        </div>
+        <p class="italic-description">
+          In the classic Risk control of entire continents grants bonus reinforcements,encouraging players to expand strategically. 
+        </p>
+        <p class="explanatory-text">
+          Key elements of the traditional game include:
+          <ul class="tables-text">
+            <li><strong>Reinforcement Phase:</strong> Receive new troops based on the number of territories and controlled continents.</li>
+            <li><strong>Attack Phase:</strong> Declare attacks on adjacent enemy territories to expand your control.</li>
+            <li><strong>Fortification Phase:</strong> Move troops between your territories to strengthen positions.</li>
+            <li><strong>Objective:</strong> Eliminate all opponents.</li>
+          </ul>
+        </p>
+      </div>
+            <!-- Brick 2: Expanding Your Payment Company Globally -->
+            <div class="brick">
+              <p class="explanatory1-text">
+                In BattlePayRisk, you take on the role of a CEO of a payment company aiming to expand globally. The game transforms 
+                traditional Risk mechanics by integrating detailed country data, allowing you to analyze and decide where to invest 
+                based on economic indicators, expected incomes, and market tiers. Your strategic goal is to allocate resources efficiently, 
+                enter profitable markets, and outperform competitors in the global payments landscape.
+              </p>
+              <div class="image-container">
+                <img src="Assets/payRiskEconomics.png" alt="Global Expansion Map" class="chapter-image small-image">
+              </div>
+              <p class="italic-description">
+                The world map is enriched with economic data for each country, such as potential customers, average salaries, digital 
+                payment penetration rates, competition levels, and investment requirements. This data-driven approach adds depth to 
+                your strategic decisions, simulating real-world business challenges.
+              </p>
+              <p class="explanatory-text">
+                Key adaptations in the game include:
+                <ul class="tables-text">
+                  <li><strong>Country Analysis:</strong> Evaluate countries based on economic data to determine potential profitability.</li>
+                  <li><strong>Expected Income Calculation:</strong> Use math to estimate net expected annual income from each market.</li>
+                  <li><strong>Market Tiers:</strong> Classify countries into tiers based on expected incomes, guiding your expansion strategy.</li>
+                  <li><strong>Strategic Recommendations:</strong> Receive AI-generated suggestions on where to allocate resources and when to enter or avoid markets.</li>
+                </ul>
+              </p>
+            </div>
+            <!-- Brick 3: New Goals and Monte Carlo Tree Search Algorithm -->
+      <div class="brick">
+        <p class="explanatory-text">
+          BattlePayRisk introduces new goals centered around economic dominance and strategic investments. Players aim to control high-tier
+          markets, maximize incomes, and outmaneuver opponents economically. To assist in making informed decisions, we utilize the Monte Carlo
+          Tree Search (MCTS) algorithm.
+        </p>
+        <p class="explanatory1-text">
+          The MCTS algorithm enhances gameplay by providing score ranges and recommendations for allocation and attack turns. It simulates
+          several game states to evaluate the potential outcomes of different strategies.
+        </p>
+        <p class="explanatory-text">
+          How MCTS Works in BattlePayRisk:
+          <ul class="tables-text">
+            <li><strong>Selection:</strong> Starting from the current game state, MCTS selects promising moves based on prior statistics, 
+              balancing exploration of new strategies and exploitation of known successful ones.</li>
+            <li><strong>Expansion:</strong> It expands the game tree by adding new nodes representing possible actions, particularly 
+              focusing on high-tier countries.</li>
+            <li><strong>Simulation:</strong> For each expanded node, MCTS runs simulations (playouts) using algorithms that consider 
+              factors like expected income, investment costs, and competition levels. This step predicts the potential outcomes of different strategies.</li>
+            <li><strong>Backpropagation:</strong> The results of the simulations are propagated back up the tree, updating the statistics 
+              associated with each move. This process refines the MCTS's strategies are most effective.</li>
+          </ul>
+        </p>
+        <p class="explanatory1-text">
+          By leveraging MCTS, BattlePayRisk offers a sophisticated AI assistant that aids in making complex strategic decisions. 
+          It mirrors how CEO might do math in real-world scenarios to guide company toward 
+          optimal outcomes.
+        </p>
+      </div>
+          </div>
+        </div>
+        <div class="floating-buttons">
+          <!-- Chess Icon -->
+          <div class="fab-container">
+            <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+              <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+            </button>
+            <span class="fab-tooltip">BattleChess</span>
+          </div>
+          <!-- Poker Icon -->
+          <div class="fab-container">
+            <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+              <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+            </button>
+            <span class="fab-tooltip">BattlePoker</span>
+          </div>
+          <!-- Risk Icon -->
+          <div class="fab-container">
+            <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+              <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+            </button>
+            <span class="fab-tooltip">BattlePayRisk</span>
+          </div>
+        </div>    
+      </div>
+
+<!-- Final Chapter -->
+<div class="section chapter" id="chapter0">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Final Chapter: Always Do the Math</h2>
+    <div class="brick-container">
+      <!-- Video Brick -->
+      <div class="brick">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/nuPZUUED5uk" title="The Imitation Game Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="italic-description">"The Imitation Game" is a 2014 film directed by Morten Tyldum and starring Benedict Cumberbatch. 
+          The movie portrays the life of Alan Turing, a brilliant mathematician and logician who played a pivotal role in cracking the Enigma 
+          code during World War II. Turing's work not only contributed significantly to the Allied victory but also laid the groundwork for 
+          modern computing and artificial intelligence.</p>
+      </div>
+      <!-- Conclusion Brick -->
+      <div class="brick">
+        <p class="explanatory-text">The story of Alan Turing exemplifies the profound impact that mathematical thinking can have on solving 
+          complex problems and making informed decisions. Leaders must be cautious not to fall into the trap of drawing conclusions without 
+          first engaging in thorough mathematical reasoning. Just as athletes must train consistently to perform at their best, so too must leaders practice 
+          and hone their analytical skills.</p>
+        
+        <p class="explanatory1-text">This dedication to practice aligns with the Greek concept of <em>ethos</em>, which refers to the 
+          character and credibility one builds through habitual actions. In leadership, <em>ethos</em> embodies the commitment to making 
+          decisions grounded in logic, ethics, and systematic analysis.</p>
+        
+        <p class="explanatory-text">Moreover, as artificial intelligence continues to advance, our ability to leverage these technologies 
+          effectively hinges on our understanding of the underlying math. By doing the right math, we not only enhance our decision-making 
+          capabilities but also empower AI systems to perform optimally. This synergy between human insight and "machines" 
+          can drive innovation and success in ways previously unimaginable. Ultimately, leaders who embody the <em>ethos</em> of continuous 
+          learning and mathematical rigor position themselves and their organizations at the forefront of progress.</p>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Floating Buttons -->
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>
+</div>
+
+<!-- Acknowledgments Section -->
+<div class="section acknowledgments" id="acknowledgments">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Acknowledgments</h2>
+    <div class="brick-container">
+      <div class="brick">
+        <p class="explanatory-text">I would like to express my sincere gratitude to the following individuals whose contributions have been invaluable in building the foundation of my games:</p>
+        <ul class="acknowledgments-list">
+          <li><strong>Zeyu Zhang</strong> (<a href="https://github.com/zeyu2001" target="_blank">zeyu2001</a>)</li>
+          <li><strong>Adam Hamer</strong> (<a href="https://github.com/rzencoder" target="_blank">rzencoder</a>)</li>
+          <li><strong>Aaron Smith</strong> (<a href="https://github.com/aaronrs2002" target="_blank">aaronrs2002</a>)</li>
+        </ul>
+        <p class="explanatory-text">Their work and shared code on GitHub have been instrumental in helping me develop the basics of my games. I deeply appreciate their dedication and willingness to contribute to the open-source community.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div class="modal-overlay" id="modal-overlay"></div>
+  <div class="modal-content" id="modal-content">
+    <span class="close-button" id="close-button">&times;</span>
+    <img src="" id="modal-image" class="modal-media" alt="">
+    <iframe src="" id="modal-video" class="modal-media" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- Scroll Down Indicator -->
+<div class="scroll-down-indicator">
+  <img src="Assets/scrollDown.jpeg" alt="Scroll Down Icon">
+</div>
+<!-- Footer -->
+<footer>
+  <small> Copyright &copy; 2024
+      <a class="footerLink" href="https://www.urtziarana.com">Urtzi Arana Santamaria</a> 
+  </small>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const scrollIndicator = document.querySelector('.scroll-down-indicator');
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const pageHeight = document.body.offsetHeight - 50; 
+
+    if (scrollPosition >= pageHeight) {
+      scrollIndicator.style.display = 'none';
+    } else {
+      scrollIndicator.style.display = 'block';
+    }
+  });
+</script>
+
+<script src="App.js"></script>
+</body>
+</html>
