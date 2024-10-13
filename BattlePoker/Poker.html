@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BattlePoker Game</title>
+
+    <!--Board Design features-->
+
+    <!--Bootstrap for CSS features-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap for JS features--> 
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" 
+    integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+    <!--Google Icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" crossorigin="anonymous">
+    <!--Cards Styles-->
+    <link href="https://aaronrs2002.github.io/black-jack/css/style.css" rel="stylesheet">
+    <!-- jQuery --> 
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <!--Main CSS Styles-->
+    <link href="Styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+    <div class="containerMain">
+        <div class="containerCenter">
+            <div class="button-group-left">
+                <p class="money-pot">Your Money Pot: $<span id="playerMoney"></span></p>
+                <button class="btn btn-primary btn-lg p-2 deal-button" title="Deal" onClick="javascript:deal()">Opening Bet: $10</button>
+            </div>
+            <div class="button-group-right">
+                <button class="btn btn-secondary raise-button" data-round="max" title="max"
+                    onClick="javascript:match(false,3)" disabled>All in $$$</button>
+                <button class="btn btn-secondary raise-button" data-round="raise" title="raise"
+                    onClick="javascript:match(false,2)" disabled>Raise to $$ <span id="raiseAmt"></span></button>
+                <button class="btn btn-secondary raise-button" data-round="match" title="match"
+                    onClick="javascript:match(false,1)" disabled>Min Bet $</button>
+                <button class="btn btn-secondary check-button" data-round="check" title="check"
+                    onClick="javascript:match(true,1)" disabled>Check</button>
+                <button id="foldBt" class="btn btn-secondary fold-button" onClick="javascript:fold()" disabled>Fold</button>
+            </div>
+                <div class="alert alert-info d-flex justify-content-between" role="alert" id="notification">
+                            <p id="betTarget" alt="Texas Hold'em Poker Game"><span 
+                                    class="text-danger"></span>Welcome Player</p>
+                            <!--Hide players selection-->
+                            <div class="form-group d-none"> 
+                                <select class="form-control hide" id="howManyopponents">
+                                    <option value="1">1 opponent</option>
+                                    <option value="2">2 opponents</option>
+                                    <option value="3" selected>3 opponents</option>
+                                </select>
+                            </div>
+                        <div class="col-md-12 hide" id="status">
+                            <p id="message">Press Button to Open</p>
+                        </div>
+                        <div class="communityCardDetails" id="communityCardDetails" role="alert" data-player="4">
+                        </div>
+                </div>
+                <div class="playingCards">
+                    <div id="communityCards"></div>
+                </div> 
+            <div class="row playersRow">
+                <div class="col-md-3 player-container">
+                    <div id="playerCards" class="cards-container"></div>
+                    <div class="alert alert-info hide player-details" role="alert" id="playerHandDetails" data-player="0"></div>
+                </div>
+                <div class="col-md-3 player-container">
+                    <div id="playerTwoCards" class="cards-container"></div>
+                    <div class="alert alert-info hide player-details" data-status="" id="playerTwoHandDetails" role="alert" data-player="1"></div>
+                </div>
+                <div class="col-md-3 player-container">
+                    <div id="playerThreeCards" class="cards-container"></div>
+                    <div class="alert alert-info hide player-details" data-status="" id="playerThreeHandDetails" role="alert" data-player="2"></div>
+                </div>
+                <div class="col-md-3 player-container">
+                    <div id="playerFourCards" class="cards-container"></div>
+                    <div class="alert alert-info hide player-details" data-status="" id="playerFourHandDetails" role="alert" data-player="3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="containerRight">
+            <div class="status-box text-center">
+                <h2 class="status">Hand Ranking</h2>
+                <img src="assets/handRanking.png" class="pokerRules"/>
+            </div>
+            <div class="top text-center">
+                <h4 class="topMoves">UrtziAI Recommendations</h4>
+                <div id="top-moves"></div>
+            </div>       
+        </div>
+        <div class="floating-buttons">
+            <div class="fab-container">
+              <button class="game-fab" onclick="openGame('trilogy')" aria-label="Go to Trilogy">
+                <img src="../Assets/trilogyIcon.png" alt="Trilogy Icon" class="fab-icon">
+              </button>
+              <span class="fab-tooltip">Trilogy Menu</span>
+            </div>
+        </div> 
+    </div> 
+    </main>
+    <footer class="footerMain">
+        <small> Copyright &copy; 2024
+            <a class="footerLink" href="https://www.urtziarana.com">Urtzi Arana Santamaria</a> 
+        </small>
+    </footer>
+</body>
+
+<!--JavaScript Game Calls-->
+<script src="https://aaronrs2002.github.io/black-jack/js/cards.js"></script>
+<script src="Javacript/Poker.js"></script>
+<script src="Javacript/App.js"></script>
+<script src="Javacript/CFR.js"></script>
+
+</html>

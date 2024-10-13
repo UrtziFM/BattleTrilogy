@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BattleChess Game</title>
+
+    <!--Board Design features-->
+    <!--Bootstrap for CSS features-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap for JS features--> 
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" 
+    integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+    <!--Google Icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/5b14db5f0b.js" crossorigin="anonymous"></script>
+    <!-- jQuery --> 
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <!-- Chessboard JS -->
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+    integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous"> 
+    <script defer src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+    integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
+
+    <script defer type="text/javascript" src="Javascript/Chess.js"></script>
+    <script defer type="text/javascript" src="Javascript/App.js"></script>
+    <link rel="stylesheet" href="Styles.css" type="text/css">
+
+</head>
+<body>
+    <main>
+        <div class="container my-3">
+            <div class="row flex-grow-1">
+                <div class="col-md-7 d-flex justify-content-center align-items-center">
+                    <div id="myBoard"></div>
+                </div>
+                <div class="col-md-5 d-flex flex-column justify-content-center">
+                        <div class="status-box text-center">
+                            <h2 class="status">Status</h2>
+                            <p><span id="status">No check, checkmate, or draw.</span></p>
+                            <p><span id="advantageColor">Neither side</span> has the advantage 
+                                (+<span id="advantageNumber">0</span>).</p>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" 
+                                    role="progressbar" aria-valuenow="0" style="width: 50%"
+                                    aria-valuemin="-2000" aria-valuemax="4000" id='advantageBar'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top text-center">
+                            <h4 class="topMoves">UrtziAI Recommendations</h4>
+                            <input type="checkbox" id="showHint" name="showHint" value="showHint">
+                                <label class="label" for="showHint">Check to highlight by blue your next best move</label>
+                            <div id="top-moves"></div>
+                        </div>
+                        <div class="buttons-wrapper">
+                            <div class="buttons-container">
+                                <button id="undoBtn" class="btn btn-primary">Rollback last move</button>
+                                <button id="resetGameBtn" class="btn btn-danger">Reset ChessBattle</button>
+                            </div>
+                        </div>                        
+                    <div class="form-group d-none">
+                        <label for="search-depth">Search Depth (Black):</label>
+                        <select id="search-depth">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4" selected>4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group d-none">
+                        <label for="search-depth-white">Search Depth (White):</label>
+                        <select id="search-depth-white">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4" selected>4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <small> Copyright &copy; 2024
+            <a class="footerLink" href="https://www.urtziarana.com">Urtzi Arana Santamaria</a> 
+        </small>
+    </footer>
+</body>
+</html>

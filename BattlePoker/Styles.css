@@ -1,0 +1,367 @@
+.bodyMain  {
+    color: #fff;
+    background-color: #000;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#start.screen {
+    width: 80%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.startScreen {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.startPoker {
+    max-width: auto;
+    height: 60%;
+    display: block;
+    margin: 0 auto;
+}
+
+.startHack {
+    max-width: auto;
+    height: 15%;
+    display: block;
+    margin: 0 auto;
+}
+
+.mainButton  {
+    outline: none;
+    border: none;
+    border: collapse;
+    border-radius: 8px;
+    margin-top: 80px;
+    padding: 10px;
+    color: #fff;
+    background-color: #2ecc71;
+    font-size: 1.2em;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+}
+
+.mainButton:hover  {
+    background-color: #3498db;
+}
+
+#load {
+    font-size: 3em;
+}
+
+#load.screen {
+    animation: fadeIn 2s infinite alternate;
+}
+
+.footerMain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    padding: 5px 10px;
+    border-bottom-right-radius: 5px;
+}
+
+.footerLink {
+    color: rgb(0, 81, 255);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+}
+
+
+/* Specific Poker.html styles */
+
+body {
+    background-color: #000; 
+    color: #fff; 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.containerMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.containerCenter {
+    width: 55%;
+    margin: 0 1%;
+    background-color: #006400; 
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.button-group-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.money-pot {
+    font-family: sans-serif; 
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    text-align: center; 
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.deal-button {
+    font-family: sans-serif; 
+    font-size: 14px; 
+    background-color: #007bff;
+    border-color: #66b3ff; 
+    border-width: 5px; 
+    border-style: solid; 
+    color: white; 
+    width: auto;
+    text-align: center; 
+    border-radius: 10px;
+}
+
+.button-group-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px; 
+    margin-bottom: 10px;
+}
+
+.raise-button {
+    font-family: sans-serif; 
+    font-size: 14px; 
+    background-color: #007bff; 
+    color: white; 
+}
+
+.check-button {
+    font-family: sans-serif; 
+    font-size: 14px; 
+    background-color: #007bff; 
+    color: white; 
+}
+
+.fold-button {
+    font-family: sans-serif;
+    font-size: 14px;
+    background-color: #dc3545; 
+    color: white;
+}
+
+#notification {
+    width: 100%;
+    font-size: 16px; 
+}
+
+#betTarget {
+    flex: 1; 
+    margin-left: 60px;
+    text-align: center; 
+    font-family: sans-serif; 
+    font-size: 16px; 
+}
+
+#status {
+    flex: 1; 
+    margin-left: 40px;
+    text-align: center; 
+    font-family: sans-serif; 
+    font-size: 16px; 
+}
+
+#communityCardDetails {
+    margin-right: 80px; 
+    text-align: center; 
+    font-family: sans-serif; 
+    font-size: 16px; 
+}
+
+.playingCards {
+    padding: 20px;
+}
+
+.playersRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards-container {
+    width: 200px;
+    height: auto;
+    display: flex;
+    padding: 15px;
+}
+
+.player-details {
+    width: 100%;
+    text-align: center;
+}
+
+.containerRight {
+    flex: 1;
+    margin: 0 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.status-box {
+    background-color: #006400;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.status {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.pokerRules {
+    max-width: 75%;
+    height: auto;
+}
+
+.top {
+    background-color: #006400;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+}
+
+.topMoves {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#top-moves {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Style for the floating buttons container */
+.floating-buttons {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100; 
+  }
+  
+  .floating-buttons {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .fab-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .game-fab {
+    width: 56px;
+    height: 56px;
+    background-color: #006400;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game-fab:hover {
+    background-color: #7f6500;
+  }
+  
+  .game-fab img.fab-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .fab-tooltip {
+    visibility: hidden;
+    width: 100px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 6px 8px;
+    border-radius: 4px;
+    position: absolute;
+    right: 70px;
+    bottom: 50%;
+    transform: translateY(50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .fab-container:hover .fab-tooltip,
+  .fab-container:focus-within .fab-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
