@@ -1,459 +1,459 @@
 body {
-    background: black;
-    color: #ffffff;
-    font-family: "Alfa Slab One", sans-serif;
-    text-align: center;
+  background: black;
+  color: #ffffff;
+  font-family: "Alfa Slab One", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+    background: #b8e4fc;
     display: flex;
+    margin: 40px auto;
+    margin-bottom: 10px;
+    padding: 20px;
+    max-width: 1100px;
+    justify-content: space-between;
+    border-radius: 15px;
+  }
+
+  .player-name {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .reserve-title{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  button {
+    font-family: "Alfa Slab One", sans-serif;
+    cursor: pointer;
+    background: #08549c;
+    text-shadow: 2px 2px #222;
+    color: #fff;
+    padding: 6px;
+    font-size: 1.05em;
+    text-align: center;
+    margin: 5px auto;
+    border-radius: 5px;
+  }
+ 
+  button:hover {
+    background: #089ce4;
+  }
+
+  
+  .flash {
+    animation: flash 2.5s;
+    animation-iteration-count: 2;
+  }
+  
+  @keyframes flash {
+    0% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 0.4;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .map {
+    margin: 0 auto;
+  }
+  
+  .area {
+    cursor: pointer;
+  }
+  
+  .unit {
+    font-size: 1.1em;
+    font-family: "Alfa Slab One", sans-serif;
+    cursor: not-allowed;
+    fill: #fff;
+  }
+  
+  .bars {
+    display: flex;
+    justify-content: center;
+  }
+ 
+  .bars > div {
+    height: 30px;
+  }
+  
+  .player-panel {
+    background: black;
+    width: 140px;
+    height: 500px;
+    text-shadow: 2px 2px #222;
+    border-radius: 5px;
+    padding: 5px;
+    border: 3px solid #222;
+    margin: 10px 0 50px;
+    font-size: 1.1em;
+    display: none;
     flex-direction: column;
+    align-items: center;
+  }
+  
+  .player-panel h1 {
+    color: #08549c;
+    text-shadow: 2px 2px #fff;
+    font-size: 2.2em;
+    margin: 5px 0 10px;
+  }
+  
+  .turn-info-message {
+    font-family: 'arial';
+    font-size: 0.8em;
+    height: 80px;
+  }
+  
+  .turn-info {
+    color: #08549c;
+    text-shadow: 2px 2px #222;
+    padding: 20px 0;
+    font-size: 1.5em;
+  }
+  
+  .tip {
+    font-family: 'arial';
+    margin: 20px 0;
+    font-size: 0.8em;
+  }
+  
+  .info {
+    display: none;
+    margin: 10px 0 0;
+    width: 160px;
+    text-align: center;
+  }
+
+  .info > div {
+    border: 2px solid #222;
+    padding: 3px 5px;
+    text-shadow: 1px 1px #222;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  
+  .info-one {
+    background: #08549c;
+  }
+  
+  .info-one.highlight {
+    background: #08549c;
+  }
+  
+  .info-one.defeated {
+    background: #444444;
+  }
+  
+  .info-two {
+    background: #ff0404;
+  }
+  
+  .info-two.highlight {
+    background: #ff0404;
+  }
+  
+  .info-two.defeated {
+    background: #444444;
+  }
+  
+  .info-three {
+    background: #7064fc;
+  }
+
+  .info-three.highlight {
+    background: #7064fc;
+  }
+  
+  .info-three.defeated {
+    background: #444444;
+  }
+  
+  .info-four {
+    background: #484444;
+    color: #38c40c;
+  }
+  
+  .info-four.highlight {
+    background: #484444;
+    color: #38c40c;
+  }
+  
+  .info-four.defeated {
+    background: #444444;
+    color: #38c40c;
+  }
+  
+  .info-five {
+    background: #40b45c;
+  }
+  
+  .info-five.highlight {
+    background: #40b45c;
+  }
+  
+  .info-five.defeated {
+    background: #444444;
+  }
+  
+  .info-six {
+    background: #ffe404;
+  }
+  
+  .info-six.highlight {
+    background: #ffe404;
+  }
+  
+  .info-six.defeated {
+    background: #444444;
+  }
+
+  .leader {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+  }
+
+  .country {
+    font-size: 1.1em;
+  }
+
+  .round {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
     height: 100vh;
   }
   
-  .container {
-      background: #b8e4fc;
-      display: flex;
-      margin: 40px auto;
-      margin-bottom: 10px;
-      padding: 20px;
-      max-width: 1100px;
-      justify-content: space-between;
-      border-radius: 15px;
-    }
+  .content {
+    background: #08549c;
+    position: relative;
+    width: 500px;
+    top: 150px;
+    margin: 0 auto;
+    border: 4px solid #222;
+    border-radius: 5px;
+    font-size: 1.5em;
+    padding: 10px;
+  }
   
-    .player-name {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    p {
-      margin: 0;
-      padding: 0;
-    }
+  .start-modal {
+    width: 400px;
+    background: #089ce4;
+    top: 100px;
+    position: relative;
+    margin: 0 auto;
+    font-family: "Alfa Slab One", sans-serif;
+    font-size: 2em;
+    z-index: 6;
+    border: 4px solid black;
+    border-radius: 5px;
+    color: white;
+    text-shadow: 2px 2px black;
+  }
+ 
+  .start-modal input {
+    font-size: 0.8em;
+    padding: 4px;
+    font-family: "Alfa Slab One", sans-serif;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
   
-    .reserve-title{
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    button {
-      font-family: "Alfa Slab One", sans-serif;
-      cursor: pointer;
-      background: #08549c;
-      text-shadow: 2px 2px #222;
-      color: #fff;
-      padding: 6px;
-      font-size: 1.05em;
-      text-align: center;
-      margin: 5px auto;
+  .start-modal button {
+    margin: 10px auto;
+  }
+  
+  .title {
+    font-size: 2.5em;
+    color: #08549c;
+    text-shadow: 3px 3px white;
+  }
+  
+  .win-content button {
+    margin: 15px auto;
+  }
+  
+  .win-message {
+    font-size: 3rem;
+    text-shadow: 2px 2px #fff;
+    padding: 10px;
+  }
+  
+  .bonus-modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+    text-shadow: 2px 2px #222;
+  }
+  
+  .bonus-modal-content {
+    text-transform: capitalize;
+  }
+  
+  .bonus-modal-text {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px #fff;
+    padding: 10px;
+  }
+
+  .incomes {
+    font-size: 1.01rem;
+    color: green;
+    font-weight: bold;
+  }
+
+  .containerRight {
+    flex: 1;
+    margin: 5px 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .top {
+      background-color: #b8e4fc;
+      color: white;
+      padding: 5px;
       border-radius: 5px;
-    }
-   
-    button:hover {
-      background: #089ce4;
-    }
-  
-    
-    .flash {
-      animation: flash 2.5s;
-      animation-iteration-count: 2;
-    }
-    
-    @keyframes flash {
-      0% {
-        opacity: 1;
-      }
-    
-      50% {
-        opacity: 0.4;
-      }
-    
-      100% {
-        opacity: 1;
-      }
-    }
-    
-    .map {
-      margin: 0 auto;
-    }
-    
-    .area {
-      cursor: pointer;
-    }
-    
-    .unit {
-      font-size: 1.1em;
-      font-family: "Alfa Slab One", sans-serif;
-      cursor: not-allowed;
-      fill: #fff;
-    }
-    
-    .bars {
-      display: flex;
-      justify-content: center;
-    }
-   
-    .bars > div {
-      height: 30px;
-    }
-    
-    .player-panel {
-      background: black;
-      width: 140px;
-      height: 500px;
-      text-shadow: 2px 2px #222;
+  }
+
+  #recommend-btn {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  #top-moves {
+      background-color: black;
+      color: white;
       border-radius: 5px;
       padding: 5px;
-      border: 3px solid #222;
-      margin: 10px 0 50px;
-      font-size: 1.1em;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .player-panel h1 {
-      color: #08549c;
-      text-shadow: 2px 2px #fff;
-      font-size: 2.2em;
-      margin: 5px 0 10px;
-    }
-    
-    .turn-info-message {
-      font-family: 'arial';
-      font-size: 0.8em;
-      height: 80px;
-    }
-    
-    .turn-info {
-      color: #08549c;
-      text-shadow: 2px 2px #222;
-      padding: 20px 0;
-      font-size: 1.5em;
-    }
-    
-    .tip {
-      font-family: 'arial';
-      margin: 20px 0;
-      font-size: 0.8em;
-    }
-    
-    .info {
-      display: none;
-      margin: 10px 0 0;
-      width: 160px;
-      text-align: center;
-    }
-  
-    .info > div {
-      border: 2px solid #222;
-      padding: 3px 5px;
-      text-shadow: 1px 1px #222;
-      margin: 5px 0;
-      border-radius: 5px;
-    }
-    
-    .info-one {
-      background: #08549c;
-    }
-    
-    .info-one.highlight {
-      background: #08549c;
-    }
-    
-    .info-one.defeated {
-      background: #444444;
-    }
-    
-    .info-two {
-      background: #ff0404;
-    }
-    
-    .info-two.highlight {
-      background: #ff0404;
-    }
-    
-    .info-two.defeated {
-      background: #444444;
-    }
-    
-    .info-three {
-      background: #7064fc;
-    }
-  
-    .info-three.highlight {
-      background: #7064fc;
-    }
-    
-    .info-three.defeated {
-      background: #444444;
-    }
-    
-    .info-four {
-      background: #484444;
-      color: #38c40c;
-    }
-    
-    .info-four.highlight {
-      background: #484444;
-      color: #38c40c;
-    }
-    
-    .info-four.defeated {
-      background: #444444;
-      color: #38c40c;
-    }
-    
-    .info-five {
-      background: #40b45c;
-    }
-    
-    .info-five.highlight {
-      background: #40b45c;
-    }
-    
-    .info-five.defeated {
-      background: #444444;
-    }
-    
-    .info-six {
-      background: #ffe404;
-    }
-    
-    .info-six.highlight {
-      background: #ffe404;
-    }
-    
-    .info-six.defeated {
-      background: #444444;
-    }
-  
-    .leader {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.9em;
-    }
-  
-    .country {
-      font-size: 1.1em;
-    }
-  
-    .round {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.9em;
-    }
-  
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 5;
-      background: rgba(0, 0, 0, 0.6);
-      width: 100%;
-      height: 100vh;
-    }
-    
-    .content {
-      background: #08549c;
-      position: relative;
-      width: 500px;
-      top: 150px;
-      margin: 0 auto;
-      border: 4px solid #222;
-      border-radius: 5px;
-      font-size: 1.5em;
-      padding: 10px;
-    }
-    
-    .start-modal {
-      width: 400px;
-      background: #089ce4;
-      top: 100px;
-      position: relative;
-      margin: 0 auto;
-      font-family: "Alfa Slab One", sans-serif;
-      font-size: 2em;
-      z-index: 6;
-      border: 4px solid black;
-      border-radius: 5px;
-      color: white;
-      text-shadow: 2px 2px black;
-    }
-   
-    .start-modal input {
-      font-size: 0.8em;
-      padding: 4px;
-      font-family: "Alfa Slab One", sans-serif;
-      border-radius: 5px;
-      margin: 5px 0;
-    }
-    
-    .start-modal button {
-      margin: 10px auto;
-    }
-    
-    .title {
-      font-size: 2.5em;
-      color: #08549c;
-      text-shadow: 3px 3px white;
-    }
-    
-    .win-content button {
-      margin: 15px auto;
-    }
-    
-    .win-message {
-      font-size: 3rem;
-      text-shadow: 2px 2px #fff;
-      padding: 10px;
-    }
-    
-    .bonus-modal {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 5;
-      width: 100%;
-      height: 100%;
-      font-size: 1.5em;
-      text-shadow: 2px 2px #222;
-    }
-    
-    .bonus-modal-content {
-      text-transform: capitalize;
-    }
-    
-    .bonus-modal-text {
-      font-size: 2.5rem;
-      text-shadow: 2px 2px #fff;
-      padding: 10px;
-    }
-  
-    .incomes {
-      font-size: 1.01rem;
-      color: green;
-      font-weight: bold;
-    }
-  
-    .containerRight {
-      flex: 1;
-      margin: 5px 1%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-  
-    .top {
-        background-color: #b8e4fc;
-        color: white;
-        padding: 5px;
-        border-radius: 5px;
-    }
-  
-    #recommend-btn {
-      margin: 10px;
-      padding: 10px;
-    }
-  
-    #top-moves {
-        background-color: black;
-        color: white;
-        border-radius: 5px;
-        padding: 5px;
-    }
-  
-    .footerMain {
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: black;
-      padding: 5px 10px;
-      border-bottom-right-radius: 5px;
-      font-family: Arial, Helvetica, sans-serif;
   }
-  
-    .footerLink {
-        color: rgb(0, 81, 255);
-    }
-  
-    .info-popup {
-      position: absolute;
-      background-color: black;
-      border: 1px solid #ddd;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.8rem;
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      display: none; /* Oculto por defecto */
-      z-index: 1000;
+
+  .footerMain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    padding: 5px 10px;
+    border-bottom-right-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+  .footerLink {
+      color: rgb(0, 81, 255);
   }
-  
-  /* Style for the floating buttons container */
-  .floating-buttons {
+
+  .info-popup {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 100; 
-  }
-  
-  .floating-buttons {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 100;
-  }
-  
-  .fab-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .game-fab {
-    width: 56px;
-    height: 56px;
-    background-color: #08549c;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .game-fab:hover {
-    background-color: #7f6500;
-  }
-  
-  .game-fab img.fab-icon {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .fab-tooltip {
-    visibility: hidden;
-    width: 100px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 6px 8px;
-    border-radius: 4px;
-    position: absolute;
-    right: 70px;
-    bottom: 50%;
-    transform: translateY(50%);
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  
-  .fab-container:hover .fab-tooltip,
-  .fab-container:focus-within .fab-tooltip {
-    visibility: visible;
-    opacity: 1;
-  }
+    background-color: black;
+    border: 1px solid #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+}
+
+/* Style for the floating buttons container */
+.floating-buttons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100; 
+}
+
+.floating-buttons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.fab-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.game-fab {
+  width: 56px;
+  height: 56px;
+  background-color: #08549c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-fab:hover {
+  background-color: #7f6500;
+}
+
+.game-fab img.fab-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.fab-tooltip {
+  visibility: hidden;
+  width: 100px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 4px;
+  position: absolute;
+  right: 70px;
+  bottom: 50%;
+  transform: translateY(50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.fab-container:hover .fab-tooltip,
+.fab-container:focus-within .fab-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
