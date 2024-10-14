@@ -1139,7 +1139,7 @@
   </div>    
 </div>
 
-<div class="section chapter" id="chapterX">
+<div class="section chapter" id="chapter0">
   <div class="chapter-content">
     <div class="brick-container">
       <!-- Brick 1: Mathematical Foundation of the MCTS Algorithm -->
@@ -1309,6 +1309,112 @@
     </div>
   </div>
 </div>
+
+<div class="section chapter" id="chapter0">
+  <div class="chapter-content">
+    <h2 class="chapter-title">Appendix</h2>
+    <div class="brick-container">
+      <!-- Brick 1: Deep Dive into Minimax Algorithm in Chess -->
+      <div class="brick">
+        <p class="explanatory1-text">
+          The Minimax algorithm is fundamental in AI for decision-making in two-player, turn-based games like chess. It aims to minimize the possible loss for a worst-case scenario by assuming that the opponent is also playing optimally.
+        </p>
+        <p class="explanatory-text">
+          <strong>Why Min and Max Alternate in Nodes:</strong>
+          <ul class="tables-text">
+            <li><u>Max Nodes (AI's Turn):</u> The AI aims to <strong>maximize</strong> its advantage, selecting moves that lead to the highest possible evaluation score.</li>
+            <li><u>Min Nodes (Opponent's Turn):</u> The AI assumes the opponent will try to <strong>minimize</strong> the AI's advantage, selecting moves that lead to the lowest possible evaluation score for the AI.</li>
+            <li>This alternating pattern reflects the adversarial nature of the game, where each player tries to optimize their outcome while considering the best possible countermoves from the opponent.</li>
+          </ul>
+        </p>
+        <p class="explanatory1-text">
+          In BattleChess, if both players use the best recommendations provided by the AI at the same search depth, the game theoretically results in a draw. This is because:
+          <ul class="tables-text">
+            <li>Both players are making optimal moves based on the same evaluation function and depth.</li>
+            <li>The Minimax algorithm ensures that neither player can unilaterally force a win if the opponent plays optimally.</li>
+            <li>The game reaches a state of equilibrium, reflecting a perfectly balanced strategy from both sides.</li>
+          </ul>
+          This scenario demonstrates the concept of Nash Equilibrium in game theory, where no player can gain an advantage by changing their strategy unilaterally. <br><br> <u>In the game you have a one level advantage.</u>
+        </p>
+      </div>
+      <!-- Brick 2: Importance of Recommendation Score Range in Poker -->
+      <div class="brick">
+        <p class="explanatory-text">
+          In BattlePoker, understanding the range of recommendation scores is crucial for making informed decisions. These scores represent the expected value (EV) of different actions based on probability, risk, and potential reward.
+        </p>
+        <p class="explanatory1-text">
+          - <u>Regret</u> in game theory refers to the difference between the payoff from the action taken and the best possible action.<br>
+          - By minimizing regret over time, a player can improve their strategy and converge towards optimal play.<br>
+          - The recommendation score range helps players assess the potential regret associated with each decision.
+        </p>
+        <p class="explanatory-text">
+          Players can use the score ranges to determine their risk tolerance:
+          <ul class="tables-text">
+            <li><u>Higher Scores:</u> Actions with higher expected value but possibly higher variance (risk).</li>
+            <li><u>Lower Scores:</u> Safer actions with more predictable outcomes but potentially lower rewards.</li>
+          </ul>
+          By choosing actions with higher recommendation scores, players accept more risk for the chance of greater reward.
+        </p>
+      </div>
+      <!-- Brick 3: Future Integration of AI Algorithms in a Catan-like Game -->
+      <div class="brick">
+        <p class="explanatory-text">
+          As a next step, we can consider integrating advanced AI algorithms like Minimax, Alpha-Beta Pruning, Counterfactual Regret Minimization (CFR), and MCTS into a game similar to Catan, adapted for business scenarios.
+        </p>
+        <p class="explanatory1-text">
+          <strong>Embedding AI Algorithms in a Business-Adapted Catan Game:</strong><br><br>
+          - <u>Minimax and Alpha-Beta Pruning:</u><br>
+            Used for tactical decisions where players build, trade, and develop resources.<br>
+            Helps in evaluating the best moves while considering opponents' possible counteractions.<br><br>
+          - <u>Counterfactual Regret Minimization (CFR):</u><br>
+            Suitable for games with imperfect information, like hidden resource cards or secret strategies.<br>
+            Allows the AI to learn optimal strategies by minimizing regret over possible actions not taken.<br><br>
+          - <u>Monte Carlo Tree Search (MCTS):</u><br>
+            Useful for exploring a vast number of possible game states due to the combinatorial complexity of Catan.<br>
+            Balances exploration of new strategies with exploitation of known successful ones.
+        </p>
+        <p class="explanatory-text">
+          <strong>Adapting to a Business Case:</strong><br><br>
+          - The game can simulate business expansion, resource management, and market competition.<br>
+          - Players make strategic decisions on where to invest, which resources to prioritize, and how to negotiate with competitors.<br>
+          - AI algorithms can provide recommendations and simulate outcomes based on economic models and market dynamics.
+        </p>
+        <p class="explanatory1-text">
+          <strong>Potential Benefits:</strong>
+          <ul class="tables-text">
+            <li>Enhanced strategic depth and realism in gameplay.</li>
+            <li>Opportunities for players to learn complex decision-making skills applicable in real-world business contexts.</li>
+            <li>Development of an AI that can adapt to various strategies, providing a challenging and engaging experience.</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>
+</div>
+
 
 <!-- Acknowledgments Section -->
 <div class="section acknowledgments" id="acknowledgments">
