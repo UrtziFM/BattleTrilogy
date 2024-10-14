@@ -1139,8 +1139,118 @@
   </div>    
 </div>
 
+<div class="section chapter" id="chapterX">
+  <div class="chapter-content">
+    <div class="brick-container">
+      <!-- Brick 1: Mathematical Foundation of the MCTS Algorithm -->
+      <div class="brick">
+        <p class="explanatory1-text">
+          As we have seen before MCTS operates through four main steps, we can understand them deeper right here:
+        </p>
+        <p class="explanatory-text">
+          <strong>1. Selection:</strong> Starting from the root node (current game state), the algorithm selects child nodes based on the Upper Confidence Bound formula until it reaches a leaf node.
+          <br>
+          <strong>2. Expansion:</strong> If the leaf node represents a non-terminal state (the game is not over), the algorithm generates possible child nodes (future moves) from this state.
+          <br>
+          <strong>3. Simulation (Rollout):</strong> The algorithm simulates a random playout from the expanded node to a terminal state, using heuristics to bias towards promising moves.
+          <br>
+          <strong>4. Backpropagation:</strong> The result of the simulation (win, loss, or score) is backpropagated through the selected nodes, updating their visit counts and total scores.
+        </p>
+        <p class="explanatory1-text">
+          The key mathematical component in the selection step is the UCB formula:
+          <br><br>
+          <em>UCB = (w_i / n_i) + c * sqrt(ln(N_i) / n_i)</em>
+        </p>
+        <p class="explanatory-text"></p>
+          <ul class="tables-text">
+            Where:
+            <li><em>w_i</em>: Total score of node <em>i</em>.</li>
+            <li><em>n_i</em>: Number of times node <em>i</em> has been visited.</li>
+            <li><em>N_i</em>: Total number of visits to the parent node of <em>i</em>.</li>
+            <li><em>c</em>: Exploration parameter (controls the trade-off between exploration and exploitation).</li>
+          </ul>
+          This formula ensures a balance between exploring new moves (high uncertainty) and exploiting moves with high average reward.
+        </p>
+      </div>
+      <!-- Brick 2: Application of MCTS in Evaluating Moves -->
+      <div class="brick">
+        <p class="explanatory1-text">
+          <u>Example in BattlePayRisk:</u> Let's consider the initial state of the game, where it must allocate resources (troops) to various countries.
+        </p>
+        <div class="image-container">
+          <img src="Assets/initialRisk.png" alt="MCTS Tree" class="chapter-image small-image">
+        </div>
+        <p class="explanatory1-text">
+          MCTS algorithm has to evaluate and recommend specific moves, these recommendations could be split like:
+          <ul class="tables-text">
+            <li><u>Allocation A:</u> Deploy troops to <strong>India</strong> (Tier 1 market), high potential but high competition and investment cost.</li>
+            <li><u>Allocation B:</u> Focus on <strong>Brazil</strong> and <strong>Mexico</strong> (Tier 2 markets), balancing potential income and manageable competition.</li>
+            <li><u>Allocation C:</u> Invest in multiple Tier 3 countries for diversified growth with lower risk.</li>
+          </ul>
+        </p>
+        <p class="explanatory-text">
+          Advantages of MCTS in the Game:
+          <ul class="tables-text">
+            <li><u>Efficient Search:</u> Focuses computational resources on the most relevant parts of the game tree.</li>
+            <li><u>Flexibility:</u> Easily adapts to different stages of the game (e.g., fortification vs. battle phases).</li>
+            <li><u>Incorporation of Heuristics:</u> Allows biasing simulations towards more realistic and advantageous moves, such as targeting high marketTier countries.</li>
+          </ul>
+        </p>
+      </div>
+      <!-- Brick 3: Optimization and Benefits of MCTS with Examples -->
+      <div class="brick">
+        <p class="explanatory1-text">
+          <u>Example of MCTS Optimization in Battle or Attack Phase:</u> Now the CEO must decide if he/she wants to gain a new market or not.
+          <ul class="tables-text">
+            <li>The AI considers attacking from a country with surplus troops to an adjacent enemy country with a high market potential.</li>
+            <li>MCTS simulates the battle outcomes, considering the probability of success based on troop numbers and the strategic value of the target country.</li>
+            <li>The algorithm assesses the long-term benefits, such as controlling a continent or reducing enemy influence.</li>
+          </ul>
+        </p>
+        <div class="image-container">
+          <img src="Assets/attackRisk.png" alt="MCTS Attack" class="chapter-image small-image">
+        </div>
+        <p class="explanatory1-text">
+          How MCTS gets the Score Range Calculation in simulations:
+          <ul class="tables-text">
+            <li><strong>Territory Control:</strong> Points for each country owned, weighted by marketTier.</li>
+            <li><strong>Army Strength:</strong> Total troops contribute to defensive and offensive capabilities.</li>
+            <li><strong>Market Influence:</strong> Owning countries in higher tiers increases potential income.</li>
+            <li><strong>Continent Bonuses:</strong> Extra points for controlling all countries in a continent.</li>
+            <li><strong>Risk Assessment:</strong> Penalties for overextension or high enemy exposure.</li>
+          </ul>
+          By aggregating these factors, the AI evaluates the overall desirability of each move within the simulations.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <!-- Chess Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game1')" aria-label="Go to Chess Game">
+        <img src="Assets/chessIcon.png" alt="Chess Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattleChess</span>
+    </div>
+    <!-- Poker Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game2')" aria-label="Go to Poker Game">
+        <img src="Assets/pokerIcon.png" alt="Poker Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePoker</span>
+    </div>
+    <!-- Risk Icon -->
+    <div class="fab-container">
+      <button class="game-fab" onclick="openGame('game3')" aria-label="Go to Risk Game">
+        <img src="Assets/riskIcon.png" alt="Risk Icon" class="fab-icon">
+      </button>
+      <span class="fab-tooltip">BattlePayRisk</span>
+    </div>
+  </div>    
+</div>
+
 <!-- Final Chapter -->
-<div class="section chapter" id="chapter0">
+<div class="section chapter" id="chapter1">
   <div class="chapter-content">
     <h2 class="chapter-title">Final Chapter: Always Do the Math</h2>
     <div class="brick-container">
