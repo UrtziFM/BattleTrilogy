@@ -1334,58 +1334,50 @@
             <li>The Minimax algorithm ensures that neither player can unilaterally force a win if the opponent plays optimally.</li>
             <li>The game reaches a state of equilibrium, reflecting a perfectly balanced strategy from both sides.</li>
           </ul>
-          This scenario demonstrates the concept of Nash Equilibrium in game theory, where no player can gain an advantage by changing their strategy unilaterally. <br><br> <u>In the game you have a one level advantage.</u>
+          This scenario demonstrates the concept of Nash Equilibrium in game theory, where no player can gain an advantage by changing their strategy unilaterally. <br><br> <u>In BattleChess you have a one level advantage.</u>
         </p>
       </div>
       <!-- Brick 2: Importance of Recommendation Score Range in Poker -->
       <div class="brick">
         <p class="explanatory-text">
-          In BattlePoker, understanding the range of recommendation scores is crucial for making informed decisions. These scores represent the expected value (EV) of different actions based on probability, risk, and potential reward.
+          In BattlePoker, the AI uses the Counterfactual Regret Minimization (CFR) algorithm to make decisions that balance risk and reward. 
         </p>
         <p class="explanatory1-text">
-          - <u>Regret</u> in game theory refers to the difference between the payoff from the action taken and the best possible action.<br>
-          - By minimizing regret over time, a player can improve their strategy and converge towards optimal play.<br>
-          - The recommendation score range helps players assess the potential regret associated with each decision.
+          <strong>Importance of Comparing Score Ranges for Each Decision:</strong><br><br>
+          - Each possible action (check, match, raise, all-in) has an associated range of expected rewards based on various factors like hand strength, pot size, and number of opponents.<br>
+          - The AI calculates estimated rewards for each action, considering both the minimum and maximum possible outcomes.<br>
+          - Higher risk actions (like raising or going all-in) have wider score ranges due to greater variance in possible outcomes.
         </p>
         <p class="explanatory-text">
-          Players can use the score ranges to determine their risk tolerance:
-          <ul class="tables-text">
-            <li><u>Higher Scores:</u> Actions with higher expected value but possibly higher variance (risk).</li>
-            <li><u>Lower Scores:</u> Safer actions with more predictable outcomes but potentially lower rewards.</li>
-          </ul>
-          By choosing actions with higher recommendation scores, players accept more risk for the chance of greater reward.
+          <strong>Using Score Ranges to Make Decisions:</strong><br><br>
+          - Players can use the AI's recommended strategies and score ranges to inform their own decisions.<br>
+          - By understanding the expected reward range for each action, players can assess their risk tolerance and choose actions that align with their strategy.<br>
+          - For instance, a player who prefers safer play might choose actions with narrower score ranges and lower risk, while a more aggressive player might opt for actions with higher potential rewards despite the increased risk.
+        </p>
+        <p class="explanatory-text">
+          By continuously updating regrets and strategies through CFR, the AI adapts to the game's dynamics, providing players with informed recommendations that reflect both potential rewards and risks.
         </p>
       </div>
       <!-- Brick 3: Future Integration of AI Algorithms in a Catan-like Game -->
       <div class="brick">
         <p class="explanatory-text">
-          As a next step, we can consider integrating advanced AI algorithms like Minimax, Alpha-Beta Pruning, Counterfactual Regret Minimization (CFR), and MCTS into a game similar to Catan, adapted for business scenarios.
+          Looking ahead, integrating advanced AI algorithms into a game similar to Catan can create a rich, strategic experience adapted to business scenarios, such as competing in the global payments market.
         </p>
         <p class="explanatory1-text">
-          <strong>Embedding AI Algorithms in a Business-Adapted Catan Game:</strong><br><br>
-          - <u>Minimax and Alpha-Beta Pruning:</u><br>
-            Used for tactical decisions where players build, trade, and develop resources.<br>
-            Helps in evaluating the best moves while considering opponents' possible counteractions.<br><br>
-          - <u>Counterfactual Regret Minimization (CFR):</u><br>
-            Suitable for games with imperfect information, like hidden resource cards or secret strategies.<br>
-            Allows the AI to learn optimal strategies by minimizing regret over possible actions not taken.<br><br>
-          - <u>Monte Carlo Tree Search (MCTS):</u><br>
-            Useful for exploring a vast number of possible game states due to the combinatorial complexity of Catan.<br>
-            Balances exploration of new strategies with exploitation of known successful ones.
+          <strong>Imagining Catan with Business Goals in the Global Payments Market:</strong><br>
+          - Game Concept: Players act as CEOs of international payment companies, competing to expand their networks, acquire resources, and achieve market dominance in the global payments industry.
+          <br>
+          - Resource Management: Instead of traditional resources like brick or wheat, players collect assets such as technology patents, regulatory licenses, customer data, and strategic partnerships.
+          <br>
+          - Building and Expansion: Players establish offices (settlements) and data centers (cities) in key financial regions worldwide, aiming to optimize transaction processing and customer reach.
+          <br>
+          - Trading and Negotiation: Players engage in deals to exchange assets, form alliances, or negotiate market access, reflecting real-world business negotiations.
         </p>
-        <p class="explanatory-text">
-          <strong>Adapting to a Business Case:</strong><br><br>
-          - The game can simulate business expansion, resource management, and market competition.<br>
-          - Players make strategic decisions on where to invest, which resources to prioritize, and how to negotiate with competitors.<br>
-          - AI algorithms can provide recommendations and simulate outcomes based on economic models and market dynamics.
-        </p>
-        <p class="explanatory1-text">
-          <strong>Potential Benefits:</strong>
-          <ul class="tables-text">
-            <li>Enhanced strategic depth and realism in gameplay.</li>
-            <li>Opportunities for players to learn complex decision-making skills applicable in real-world business contexts.</li>
-            <li>Development of an AI that can adapt to various strategies, providing a challenging and engaging experience.</li>
-          </ul>
+        <p class="explanatory-text"></p>
+          Different algorithms role:<br><br>
+            <u>Minimax/Alpha-Beta:</u> Plan expansions and block competitors by analyzing potential moves<br>
+            <u>CFR:</u> Adjust negotiation strategies based on players' past behaviors, optimizing trade deals and alliances.<br>
+            <u>MCTS:</u> Simulate long-term market trends and competition outcomes to inform strategic decisions.<br>
         </p>
       </div>
     </div>
