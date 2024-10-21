@@ -244,23 +244,16 @@ class MCTS {
         // Sort countries: lower marketTier (better markets) first
         rankedCountries.sort((a, b) => a.marketTier - b.marketTier);
     
-        // Generate initial allocation focusing on high marketTier countries
+        // Initialize allocation with zero troops
         const initialAllocation = rankedCountries.map(item => ({
             country: item.country.name,
             troops: 0
         }));
     
-        let remainingReserve = state.currentPlayer.reserve;
-    
-        // Allocate troops starting with highest priority countries
-        for (let alloc of initialAllocation) {
-            if (remainingReserve <= 0) break;
-            alloc.troops += 1;
-            remainingReserve -= 1;
-        }
+        const totalTroops = state.currentPlayer.reserve; // Use the full reserve
     
         // Generate multiple allocation variations
-        const allocationVariations = this.generateAllocationVariations(initialAllocation, 1000); // Adjust number as needed
+        const allocationVariations = this.generateAllocationVariations(initialAllocation, 1000, totalTroops); // Pass totalTroops
     
         allocationVariations.forEach(allocation => {
             // Create a new state with the allocation
@@ -285,14 +278,13 @@ class MCTS {
     }      
 
     // Helper function to generate allocation variations
-    generateAllocationVariations(initialAllocation, numVariations) {
+    generateAllocationVariations(initialAllocation, numVariations, totalTroops) {
         const allocations = [];
     
         for (let i = 0; i < numVariations; i++) {
             const newAllocation = JSON.parse(JSON.stringify(initialAllocation));
     
-            // Randomly redistribute troops among countries
-            let remainingTroops = newAllocation.reduce((sum, alloc) => sum + alloc.troops, 0);
+            let remainingTroops = totalTroops;
     
             // Reset troops to zero
             newAllocation.forEach(alloc => alloc.troops = 0);
@@ -405,7 +397,7 @@ class MCTS {
         score += currentPlayer.areas.length * 10; // Each territory is worth 10 points
         score += totalArmy * 2; // Each army unit is worth 2 points
     
-        // **Incorporate marketTier into the score**
+        // Incorporate marketTier into the score
         const marketTierScore = currentPlayer.areas.reduce((sum, areaName) => {
             const countryData = countriesData[areaName];
             if (countryData && countryData.marketTier) {
